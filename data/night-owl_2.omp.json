@@ -1,0 +1,128 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "background": "#5E81AC",
+          "foreground": "#E5E9F0",
+          "leading_diamond": "\u256d\u2500\ue0b6",
+          "properties": {
+            "windows": "\ue62a"
+          },
+          "style": "diamond",
+          "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}}  ",
+          "trailing_diamond": "\ue0b0",
+          "type": "os"
+        },
+        {
+          "background": "#D08770",
+          "foreground": "#ffeb95",
+          "powerline_symbol": "\ue0b0",
+          "style": "powerline",
+          "template": " \uf292 ",
+          "type": "root"
+        },
+        {
+          "background": "#88C0D0",
+          "foreground": "#14171e",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "style": "agnoster_short"
+          },
+          "style": "powerline",
+          "template": " {{ .UserName }} ",
+          "type": "session"
+        },
+        {
+          "background": "#A3BE8C",
+          "foreground": "#14171e",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "folder_icon": "\uf07b ",
+            "folder_separator_icon": "<#14171e>\ue0b1</> ",
+            "home_icon": " \uf015 ",
+            "max_depth": 3,
+            "style": "agnoster_short"
+          },
+          "style": "powerline",
+          "template": "{{ path .Path .Location }}",
+          "type": "path"
+        },
+        {
+          "background": "#F99157",
+          "background_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#e4cf6a{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#f78c6c{{ end }}",
+            "{{ if gt .Ahead 0 }}#C792EA{{ end }}",
+            "{{ if gt .Behind 0 }}#c792ea{{ end }}"
+          ],
+          "foreground": "#14171e",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "branch_icon": "\ue725 ",
+            "fetch_stash_count": true,
+            "fetch_status": true,
+            "fetch_upstream_icon": true,
+            "fetch_worktree_count": true
+          },
+          "style": "powerline",
+          "template": " {{ url .UpstreamIcon .UpstreamURL }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
+          "type": "git"
+        },
+        {
+          "background": "#D08770",
+          "foreground": "#14171e",
+          "properties": {
+            "always_enabled": true,
+            "time_format": "_2,15:04"
+          },
+          "style": "plain",
+          "template": "<transparent>\ue0b0</> \uf073 {{ .CurrentDate | date .Format }}\u2800",
+          "type": "time"
+        },
+        {
+          "background": "#EBCB8B",
+          "background_templates": ["{{ if gt .Code 0 }}#c6535e{{ end }}"],
+          "foreground": "#14171e",
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "diamond",
+          "template": "<parentBackground>\ue0b0</> \udb81\udd1f {{ .FormattedMs }} ",
+          "trailing_diamond": "\ue0b4",
+          "type": "executiontime"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#5E81AC",
+          "style": "plain",
+          "template": "\u2570\u2500",
+          "type": "text"
+        },
+        {
+          "foreground": "#99C794",
+          "foreground_templates": ["{{ if gt .Code 0 }}#c6535e{{ end }}"],
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "plain",
+          "template": "\ue285\ue285",
+          "type": "status"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "console_title_template": "{{.UserName}}@{{.HostName}}",
+  "newline": true,
+  "final_space": true,
+  "version": 2
+}
