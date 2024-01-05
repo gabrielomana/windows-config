@@ -1,8 +1,8 @@
 @echo off
-REM Actualizar orígenes de winget
+:: Actualizar orígenes de winget
 winget source update
 
-REM Actualizar todos los paquetes conocidos
+:: Actualizar todos los paquetes conocidos
 winget upgrade --all --include-unknown --accept-source-agreements --accept-package-agreements --silent --force -e
 
 :: Actualizar paquetes con Chocolatey

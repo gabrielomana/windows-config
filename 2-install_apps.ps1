@@ -428,12 +428,6 @@ schtasks /create /XML $taskPath /TN "UpgradeAppsTask"
 Remove-Item -Path $taskPath -ErrorAction SilentlyContinue
 }
 
-
-
-
-
-
-
 # Clean
 RefreshEnv
 Set-Location 'C:\Program Files (x86)\Glary Utilities'
