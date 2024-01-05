@@ -1,3 +1,11 @@
+# Importar funciones desde functions.ps1 en GitHub
+$functionsUrl = "https://github.com/gabrielomana/windows-config/raw/main/data/functions.ps1"
+Invoke-Expression (Invoke-RestMethod -Uri $functionsUrl)
+
+############################################################
+########### S E L E C T  A P P L I C A T I O N S ###########
+############################################################
+
 #### WEB BROWSERS ####
     ## Firefox: Fast and secure web browser.
         winget install --id=Mozilla.Firefox --accept-source-agreements --accept-package-agreements --silent -e
