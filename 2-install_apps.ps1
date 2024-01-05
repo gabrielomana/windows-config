@@ -361,17 +361,19 @@ $xmlContent = @"
   <RegistrationInfo>
     <Date>2024-01-05T15:51:51.4667619</Date>
     <Author>$userName</Author>
-    <URI>\Upgrade</URI>
+    <URI>\UpgradeAppsTask</URI>
   </RegistrationInfo>
   <Triggers>
-    <LogonTrigger>
-      <Repetition>
-        <Interval>PT1H</Interval>
-        <Duration>P1D</Duration>
-        <StopAtDurationEnd>false</StopAtDurationEnd>
-      </Repetition>
+    <CalendarTrigger>
+      <StartBoundary>2024-01-05T14:30:00</StartBoundary>
       <Enabled>true</Enabled>
-    </LogonTrigger>
+      <ScheduleByWeek>
+        <DaysOfWeek>
+          <Monday />
+        </DaysOfWeek>
+        <WeeksInterval>1</WeeksInterval>
+      </ScheduleByWeek>
+    </CalendarTrigger>
   </Triggers>
   <Principals>
     <Principal id="Author">
@@ -388,17 +390,19 @@ $xmlContent = @"
     <StartWhenAvailable>false</StartWhenAvailable>
     <RunOnlyIfNetworkAvailable>false</RunOnlyIfNetworkAvailable>
     <IdleSettings>
-      <StopOnIdleEnd>true</StopOnIdleEnd>
+      <Duration>PT10M</Duration>
+      <WaitTimeout>PT30M</WaitTimeout>
+      <StopOnIdleEnd>false</StopOnIdleEnd>
       <RestartOnIdle>false</RestartOnIdle>
     </IdleSettings>
     <AllowStartOnDemand>true</AllowStartOnDemand>
     <Enabled>true</Enabled>
     <Hidden>false</Hidden>
-    <RunOnlyIfIdle>false</RunOnlyIfIdle>
+    <RunOnlyIfIdle>true</RunOnlyIfIdle>
     <DisallowStartOnRemoteAppSession>false</DisallowStartOnRemoteAppSession>
     <UseUnifiedSchedulingEngine>true</UseUnifiedSchedulingEngine>
     <WakeToRun>false</WakeToRun>
-    <ExecutionTimeLimit>PT72H</ExecutionTimeLimit>
+    <ExecutionTimeLimit>PT0S</ExecutionTimeLimit>
     <Priority>7</Priority>
   </Settings>
   <Actions Context="Author">
@@ -413,6 +417,7 @@ $xmlContent = @"
   </Actions>
 </Task>
 "@
+
 
 # Ruta para el archivo XML
 $taskPath = "C:\UpgradeApps\UpgradeTask.xml"
