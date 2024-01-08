@@ -1,8 +1,28 @@
 windows-config
 ===============
 
-Install Programs, Tweaks, Fixes, and Updates
---------------------------------------------
+Program Installation, Optimization, Fixes, and Updates
+------------------------------------------------------
+
+The script aims to streamline installations, optimize by debloating with tweaks, troubleshoot configurations, and rectify Windows updates. Additionally, it simplifies the automation of the fundamental application installation process, all with the purpose of creating an efficient and uncomplicated 'Post-Installation' for Windows. This approach strives to significantly improve the post-installation experience, guaranteeing optimal performance without any impediments.
+
+Upon executing these scripts, you will achieve:
+
+Al ejecutar estos scripts, lograrás:
+
+- Optimization aimed at enhancing the overall system performance.
+- Adjustments related to telemetry.
+- Improvements in Wi-Fi connection configuration and performance.
+- Settings associated with location and location services.
+- Customization and optimization of the primary system interface.
+- Adjustments geared towards improving storage management and performance.
+- Specific optimizations designed for hibernation mode.
+- Settings within system services to boost efficiency.
+- Assorted optimized changes for the system's optimal operation.
+- Installation and software management through Chocolatey.
+- Installation and application management using Windows Package Manager (Winget) and Choco (Chocolatey).
+
+
 
 Step 1: Run PowerShell Scripts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
